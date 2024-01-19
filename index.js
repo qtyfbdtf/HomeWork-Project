@@ -1,34 +1,49 @@
-$('#saveButton').click(function() {
-    var lesson = $('#lessonInput').val();
-    var description = $('#descriptionInput').val();
+import express from "express";
+import bodyParser from "body-parser";
 
-    $('#modalLesson').text(lesson);
-    $('#modalDescription').text(description);
-});
+const app = express();
+const port = 3000;
 
-$('.modal-footer .btn-primary').click(function() {
-    const alertBox = $('#lottieAlertSubmited');
+app.use(express.static("public"))
+app.use(bodyParser.urlencoded({ extended: false }))
 
-    // Clear previous animation and set up new animation
-    alertBox.empty().show();
-    var animation = lottie.loadAnimation({
-        container: alertBox[0],
-        renderer: 'svg',
-        loop: false,
-        autoplay: true,
-        path: './animations/Animation-Submited.json'
-    });
+app.get("/", (req, res) => {
+    
+})
 
-    // Hide the alert on animation complete
-    animation.addEventListener('complete', function() {
-        alertBox.hide();
-    });
+// $('#saveButton').click(function() {
+//     var lesson = $('#lessonInput').val();
+//     var description = $('#descriptionInput').val();
 
-    // Hide the modal
-    $('#exampleModal').modal('hide');
-});
+//     $('#modalLesson').text(lesson);
+//     $('#modalDescription').text(description);
+// });
 
+// $('.modal-footer .btn-primary').click(function() {
+//     const alertBox = $('#lottieAlertSubmited');
 
+//     // Clear previous animation and set up new animation
+//     alertBox.empty().show();
+//     var animation = lottie.loadAnimation({
+//         container: alertBox[0],
+//         renderer: 'svg',
+//         loop: false,
+//         autoplay: true,
+//         path: './animations/Animation-Submited.json'
+//     });
+
+//     // Hide the alert on animation complete
+//     animation.addEventListener('complete', function() {
+//         alertBox.hide();
+//     });
+
+//     // Hide the modal
+//     $('#exampleModal').modal('hide');
+// });
+
+app.listen(port, () => {
+    console.log(`server lisening on port ${port}`);
+})
 
 //! In the future. If or else. if the home work not submited or it have an error an Error animation will pop.
 /*
