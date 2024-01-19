@@ -1,0 +1,34 @@
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+    padding-top: 10%;
+}
+
+.btn-primary {
+    margin-top: 30px;
+}
+
+/* submited animtion */
+.lottie-alert-submited {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Error animation */
+.lottie-alert-Error {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 200px;
+    height: 200px;
+}
